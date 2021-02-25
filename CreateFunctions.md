@@ -1,9 +1,11 @@
 
 # Functions作成
 ## Functionsの作成
-リソースグループにFunctionsを追加します。
-表の内容を参考に作成してください。
-※XXXXは区別をつけるため名前を使用すると便利です。
+リソースグループにFunctionsを追加します
+
+表の内容を参考に作成してください
+
+※XXXXは区別をつけるため名前を使用すると便利です
 
 | 項目 | 設定内容 |
 | -------- | -------- | 
@@ -16,22 +18,22 @@
 | 地域     | East Asia     | 
 | オペレーティングシステム     | Linux     | 
 
-「作成」ボタンからFunctionsを作成してください。
+「作成」ボタンからFunctionsを作成してください
 
 ## Functionsをローカルで開発する
 
-まずは、VSCodeに拡張機能（Azure Tools）をインストールします。
+まずは、VSCodeに拡張機能（Azure Tools）をインストールします
 ![画像](images/006.png)
 
-インストール後にAzureのアカウントにログインします。
+インストール後にAzureのアカウントにログインします
 ![画像](images/007.png)
 
-ログインすると、鍵マークになりますのでご確認ください。
+ログインすると、鍵マークになりますのでご確認ください
 ![画像](images/009.png)
 
-ローカル環境にFunctionsを作成します。
-表の内容を参考に作成してください。
-※XXXXは区別をつけるため名前を使用すると便利です。
+ローカル環境にFunctionsを作成します
+表の内容を参考に作成してください
+※XXXXは区別をつけるため名前を使用すると便利です
 
 | 項目 | 設定内容 |
 | -------- | -------- | 
@@ -41,37 +43,38 @@
 | function name     | HttpTrigger     | 
 | Authorizetion level     | Function     | 
 
-Local ProjectのフォルダができていればOKです。
+Local ProjectのフォルダができていればOKです
 ![画像](images/010.png)
 
-ファイルを見てみるとサンプルのソースコードがダウンロードされています。
+ファイルを見てみるとサンプルのソースコードがダウンロードされています
 ![画像](images/011.png)
 
 
 ローカル環境でデバッグしましょう
-VSCode上で「F5」キーを押すとデバッグモードになります。
+VSCode上で「F5」キーを押すとデバッグモードになります
 ![画像](images/014.png)
 
-作成したプロジェクトを実行します。
-画像の内容通りに操作し、実行してください。
+作成したプロジェクトを実行します
+画像の内容通りに操作し、実行してください
 ![画像](images/013.png)
-以下の画像になればOKです。
+
+以下の画像になればOKです
 ![画像](images/012.png)
 
 ### Functionsにデプロイ
-Functionsにローカルで作成した内容をデプロイします。
-デプロイする内容を選択し、デプロイしてください。
+Functionsにローカルで作成した内容をデプロイします
+デプロイする内容を選択し、デプロイしてください
 ![画像](images/015.png)
 
-表の内容を参考に作成してください。
+表の内容を参考に作成してください
 
 | 項目 | 設定内容 |
 | -------- | -------- | 
 | select subscription | 自身のサブスクリプションを選択 |
 | select function App in Azure | 作成したFunctionName | 
 
-最後に「Deployボタン」を選択してください。
-Azure Functionsで確認してみましょう。
+最後に「Deployボタン」を選択してください
+Azure Functionsで確認してみましょう
 ![画像](images/016.png)
 
 Azure Functions上でもコードテストをしてみましょう
@@ -81,11 +84,13 @@ Azure Functions上でもコードテストをしてみましょう
 ## DBの接続情報を追加する
 
 ### 出力形式にCosmosDBを登録する
-デプロイしたFuntionsにCosmosDBの接続情報を追加してみましょう。
+デプロイしたFuntionsにCosmosDBの接続情報を追加してみましょう
 
-まずは、Functionsの出力方法にDB出力を追加します。
-作成したFunctionsに「Add binding」から登録します。
-表の内容を参考に作成してください。
+まずは、Functionsの出力方法にDB出力を追加します
+
+作成したFunctionsに「Add binding」から登録します
+
+表の内容を参考に作成してください
 
 | 項目 | 設定内容 |
 | -------- | -------- | 
@@ -102,10 +107,10 @@ Azure Functions上でもコードテストをしてみましょう
 | Partition key | 空白のままEnter |
 | Collection throughput | 空白のままEnter |
 
-function.jsonに選択した項目が追加されているか確認してください。
+function.jsonに選択した項目が追加されているか確認してください
 
 
-index.jsを以下の通り変更してください。
+index.jsを以下の通り変更してください
 ```
 module.exports = async function (context, req) {
 
@@ -126,14 +131,14 @@ module.exports = async function (context, req) {
     }
 };
 ```
-再度Functionsにデプロイしてください。
+再度Functionsにデプロイしてください
 
 ### FucntionsにDB接続情報を追加
-「設定」→「構成」を選択し新しいアプリケーション設定からlocal.settings.jsonの「XXXX_DOCUMENTDB」を追加してください。
+「設定」→「構成」を選択し新しいアプリケーション設定からlocal.settings.jsonの「XXXX_DOCUMENTDB」を追加してください
 ![画像](images/018.png)
 
 Functionsを実行してみましょう
-リクエストを以下のように変更して実行してください。
+リクエストを以下のように変更して実行してください
 
 | 項目 | 設定内容 |  |
 | -------- | -------- | -------- | 
@@ -143,3 +148,5 @@ Functionsを実行してみましょう
 | クエリ | task | 123456 |
 
 ![画像](images/019.png)
+
+[次のSTEP](ReleaseAPI.md)

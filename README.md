@@ -1,9 +1,13 @@
 # Azure Fcuntionsハンズオン
-このハンズオンは、Functions作成、DBへの接続、APIの公開まで一通り経験ができるハンズオンです。
+このハンズオンは、Functions作成、DBへの接続、APIの公開まで一通り経験ができるハンズオンです学習用となっておりますのでご注意ください
 
-こちらの手順で進めてください
+## ■前提
 
-1. [準備](Setting.md)
-1. [CosmosDBの作成](CreateCosmosDB.md)
-1. [Functionsの作成](CreateFunctions.md)
-1. [APIの公開](ReleaseAPI.md)
+AzureアカウントやVSCodeがインストールされていることを前提に進めます
+まだのひとは[こちら](Setting.md)を実施してください
+
+## ■手順
+
+1. [STEP1 CosmosDBの作成](CreateCosmosDB.md)
+1. [STEP2 Functionsの作成](CreateFunctions.md)
+1. [STEP3 APIの公開](ReleaseAPI.md)
