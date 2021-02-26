@@ -56,8 +56,7 @@ Node.jsアプリからコンテナを作成します
 
 コマンド
 ```
-npm build
-npm start
+npm install
 ```
 
 config.jsの中身を一部分を変更してください
@@ -67,9 +66,13 @@ config.jsの中身を一部分を変更してください
 ~~~~省略
 Wakefield: {
     'name':'kenta',
-    'job':'SE'
+    'task':'SE'
 }
 ~~~~省略
+```
+以下のコマンドを実行してください
+```
+npm start
 ```
 
 CosmosDBにデータが入っているか確認します
